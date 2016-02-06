@@ -1,0 +1,50 @@
+<!doctype html>  
+<html lang="en">  
+   <head>  
+      <meta charset="utf-8">  
+      <title>jQuery UI Resizable functionality</title>  
+      <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+      <!-- CSS -->  
+      <style>  
+         .ui-widget-header {  
+            background:lightyellow;  
+            border: 1px solid #b9cd6d;  
+            color: Red;  
+            font-weight: bold;  
+         }  
+         .ui-widget-content {  
+            background: lightgreen;  
+            border: 1px solid #DDDDDD;  
+            color: Red;  
+         }  
+         #resizable-2,#resizable-3 {   
+            width: 150px; height: 150px; padding: 0.5em;  
+            text-align: center; margin: 0; }  
+      </style>  
+      <!-- JavaScript -->  
+      <script>  
+         $(function() {  
+            $( "#resizable-2" ).resizable({  
+               animate: true,  
+               ghost: true  
+            });  
+            $( "#resizable-3" ).resizable({  
+               ghost: true  
+            });  
+         });  
+      </script>  
+   </head>  
+   <body>  
+      <!-- HTML -->   
+      <div id="resizable-2" class="ui-widget-content">   
+         <h3 class="ui-widget-header">  
+            Pull my edges and Check the animation!!  
+         </h3>  
+      </div><br>  
+      <div id="resizable-3" class="ui-widget-content">   
+         <h3 class="ui-widget-header">I'm ghost!!</h3>  
+      </div>   
+   </body>  
+</html>  

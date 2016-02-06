@@ -1,0 +1,103 @@
+<!doctype html>  
+<html lang="en">  
+   <head>  
+      <meta charset="utf-8">  
+      <title>jQuery UI Droppable - Default functionality</title>  
+      <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+      <style>  
+         .wrap{  
+            display: table-row-group;  
+         }  
+         #sqltutorial,#htmltutorial, #javatutorial,#springtutorial {   
+            width: 120px; height: 70px; padding: 0.5em; float: left;  
+            margin: 0px 5px 10px 0;   
+         }  
+           
+          #sql,#html,#java,#spring {   
+            width: 140px; height: 100px;padding: 0.5em; float: left;   
+            margin: 10px;    
+         }  
+           
+   </style>  
+   <script>  
+      $(function() {  
+         $( "#sqltutorial" ).draggable();  
+         $( "#htmltutorial" ).draggable();  
+  
+         $( "#sql" ).droppable({  
+            accept: "#sqltutorial",  
+            drop: function( event, ui ) {  
+               $( this )  
+               .addClass( "ui-state-highlight" )  
+               .find( "p" )  
+               .html( "Dropped!" );  
+            }  
+         });  
+         $( "#html" ).droppable({  
+            accept: "#htmltutorial",  
+            drop: function( event, ui ) {  
+            $( this )  
+            .addClass( "ui-state-highlight" )  
+            .find( "p" )  
+            .html( "Dropped!" );  
+            }  
+         });  
+  
+         $( "#javatutorial" ).draggable({scope : "java"});  
+         $( "#springtutorial" ).draggable({scope : "spring"});  
+         $( "#java" ).droppable({  
+            scope: "java",  
+            drop: function( event, ui ) {  
+            $( this )  
+            .addClass( "ui-state-highlight" )  
+            .find( "p" )  
+            .html( "Dropped!" );  
+            }  
+         });  
+         $( "#spring" ).droppable({  
+            scope: "spring",  
+            drop: function( event, ui ) {  
+            $( this )  
+            .addClass( "ui-state-highlight" )  
+            .find( "p" )  
+            .html( "Dropped!" );  
+            }  
+         });   
+      });  
+   </script>  
+</head>  
+<body>  
+   <div class="wrap" >  
+   <div id="sqltutorial" class="ui-widget-content">  
+      <p>Students who want to learn <strong>SQL</strong></p>  
+   </div>  
+<div id="htmltutorial" class="ui-widget-content">  
+      <p>Students who want to learn <strong>HTML</strong></p>  
+   </div>  
+ <div id="sql" class="ui-widget-header">  
+      <p>SQL</p>  
+   </div>  
+<div id="html" class="ui-widget-header">  
+      <p>HTML</p>  
+   </div>  
+   </div>  
+   <hr/>  
+   <div class="wrap" >  
+   <div id="javatutorial" class="ui-widget-content">  
+      <p>Students who want to learn <strong>Java</strong></p>  
+   </div>  
+   <div id="springtutorial" class="ui-widget-content">  
+      <p>Students who want to learn <strong>Spring</strong></p>  
+   </div>  
+   <div id="java" class="ui-widget-header">  
+      <p>Java</p>  
+   </div>  
+  
+   <div id="spring" class="ui-widget-header">  
+      <p>Spring</p>  
+   </div>  
+   </div>  
+</body>  
+</html>  

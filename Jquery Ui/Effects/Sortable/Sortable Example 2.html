@@ -1,0 +1,45 @@
+<!DOCTYPE html>  
+<head>  
+   <title>jQuery UI Sortable - Example</title>  
+   <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+   <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+   <style>  
+      #sortable-2, #sortable-3 { list-style-type: none; margin: 0;   
+         padding: 0; width: 25%; }  
+      #sortable-2 li, #sortable-3 li { margin: 0 3px 3px 3px; padding: 0.4em;   
+         padding-left: 1.5em; font-size: 17px; height: 16px; }  
+      .default {  
+         background: lightgreen;  
+         border: 1px solid #DDDDDD;  
+         color: red;  
+      }  
+   </style>  
+   <script>  
+      $(function() {  
+         $( "#sortable-2" ).sortable({  
+            delay:200  
+         });  
+         $( "#sortable-3" ).sortable({  
+            distance:50  
+         });  
+      });  
+   </script>  
+</head>  
+<body>  
+   <h3>Delay by 500ms</h3>  
+   <ul id="sortable-2">  
+      <li class="default">Java</li>  
+      <li class="default">SQL</li>  
+      <li class="default">.NET</li></li>  
+      <li class="default">Oracle</li>  
+   </ul>  
+   <h3>Distance Delay by 50px</h3>  
+   <ul id="sortable-3">  
+      <li class="default">Java</li>  
+      <li class="default">SQL</li>  
+      <li class="default">.NET</li>  
+      <li class="default">Oracle</li>  
+   </ul>  
+</body>  
+</html>  

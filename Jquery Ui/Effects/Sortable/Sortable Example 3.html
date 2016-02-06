@@ -1,0 +1,44 @@
+<!DOCTYPE html>  
+<head>  
+   <title>jQuery UI Sortable - Example</title>  
+   <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+   <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+   <style>  
+      #sortable-4 { list-style-type: none; margin: 0;   
+         padding: 0; width: 25%; }  
+      #sortable-4 li { margin: 0 3px 3px 3px; padding: 0.4em;   
+         padding-left: 1.5em; font-size: 17px; height: 16px; }  
+      .highlight {  
+         border: 1px solid red;  
+         font-weight: bold;  
+         font-size: 45px;  
+         background-color: blue;  
+      }  
+      .default {  
+         background: lightgreen;  
+         border: 1px solid #DDDDDD;  
+         color: red;  
+      }  
+   </style>  
+   <script>  
+      $(function() {  
+         $( "#sortable-4" ).sortable({  
+          placeholder: "highlight"  
+         });  
+      });  
+   </script>  
+</head>  
+<body>  
+<h1>Courses available at JavaTpoint</h1>  
+   <ul id="sortable-4">  
+      <li class="default">Java</li>  
+      <li class="default">.NET</li>  
+      <li class="default">Android</li>  
+      <li class="default">PHP</li>  
+      <li class="default">C/C++</li>  
+      <li class="default">Spring</li>  
+      <li class="default">Hibernate</li>  
+   </ul>  
+</body>  
+</html>  
