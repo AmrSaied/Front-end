@@ -1,0 +1,30 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+<meta charset="utf-8">  
+<title>jQuery UI Tooltip functionality</title>  
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+  
+<!-- Javascript -->  
+<script>  
+$(function() {  
+$( "#tooltip-3" ).tooltip({  
+content: "<strong>Hello JavaTpoint</strong>",  
+track:true  
+}),  
+$( "#tooltip-4" ).tooltip({  
+disabled: true  
+});  
+});  
+</script>  
+</head>  
+<body>  
+<!-- HTML -->  
+<label for="name">Here is the message:</label>  
+<input id="tooltip-3" title="tooltip"><br><br><br>  
+<label for="name">Tooltip is disabled:</label>  
+<input id="tooltip-4" title="tooltip">  
+</body>  
+</html>  

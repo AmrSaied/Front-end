@@ -1,0 +1,44 @@
+<!doctype html>  
+<html lang="en">  
+   <head>  
+      <meta charset="utf-8">  
+      <title>jQuery UI Buttons functionality</title>  
+      <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+      <script>  
+         $(function() {  
+            $( "#button-9" ).button({  
+               text: false,  
+               icons: {  
+                  primary: "ui-icon-seek-start"  
+               }  
+            });  
+            $( "#button-9" ).button('destroy');  
+            $( "#button-10" ).button({  
+               icons: {  
+                  primary: "ui-icon-seek-prev"  
+               }  
+            });  
+            $( "#button-10" ).button('disable');  
+            $( "#button-11" ).button({  
+               text: false,  
+               icons: {  
+                  primary: "ui-icon-play"  
+               }  
+            });  
+         });  
+      </script>  
+   </head>  
+   <body>  
+      <button id="button-9">  
+         I'm destroyed  
+      </button>  
+      <button id="button-10">     
+         I'm disabled  
+      </button>  
+      <button id="button-11">  
+         play  
+      </button>  
+   </body>  
+</html>  

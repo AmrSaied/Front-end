@@ -1,0 +1,40 @@
+<!doctype html>  
+<html lang="en">  
+   <head>  
+      <meta charset="utf-8">  
+      <title>jQuery UI Buttons functionality</title>  
+      <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+      <script>  
+         $(function() {  
+            $( "#button-6" ).button({  
+               icons: {  
+                  primary: "ui-icon-locked"  
+               },  
+               text: false  
+            });  
+            $( "#button-7" ).button({  
+               disabled:true  
+            });  
+            $( "#button-8" ).button({  
+               icons: {  
+                  primary: "ui-icon-gear",  
+                  secondary: "ui-icon-triangle-1-s"  
+               }  
+            });  
+         });  
+      </script>  
+   </head>  
+   <body>  
+      <button id="button-6">  
+         Button with icon only  
+      </button>  
+      <button id="button-7">  
+         Button Disabled  
+      </button>  
+      <button id="button-8">  
+         Button with two icons  
+      </button>  
+   </body>  
+</html>  

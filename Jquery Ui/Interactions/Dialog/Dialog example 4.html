@@ -1,0 +1,35 @@
+<!doctype html>  
+<html lang="en">  
+   <head>  
+      <meta charset="utf-8">  
+      <title>jQuery UI Dialog functionality</title>  
+      <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+      <!-- CSS -->  
+      <style>  
+         .ui-widget-header,.ui-state-default, ui-button{  
+            background:#b9cd6d;  
+            border: 1px solid #b9cd6d;  
+            color: #FFFFFF;  
+            font-weight: bold;  
+         }  
+      </style>  
+      <!-- Javascript -->  
+      <script type="text/javascript">  
+         $(function(){  
+            $("#toggle").click(function() {  
+          
+               ($("#dialog-5").dialog("isOpen") == false) ? $("#dialog-5").dialog("open") : $("#dialog-5").dialog("close") ;  
+            });  
+            $("#dialog-5").dialog({autoOpen: false});  
+         });  
+      </script>  
+   </head>  
+   <body>  
+      <button id="toggle">Toggle dialog!</button>  
+      <div id="dialog-5" title="Dialog Title!">  
+         Click on the Toggle button to open and cose this dialog box.  
+      </div>  
+   </body>  
+</html>  
