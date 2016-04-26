@@ -1,0 +1,59 @@
+<div ng-controller="manageCalendarSettingsCtrl">
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">اعدادات الجدول الزمني</h1>
+    </div>
+
+    <div class="wrapper-md">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <span><i class="glyphicon glyphicon-calendar icon text-info-dker"></i></span>
+                    <a href="" ui-sref="app.addCalendarSetting">
+                        <i class="pull-right fa fa-plus-circle" bs-tooltip data-placement="top" data-title="اضافة"></i>
+                    </a>
+                </h3>
+            </div>
+            <div class="table-responsive">
+
+                <table datatable="ng" dt-options="dtOptions"
+                       dt-instance="dtInstance" class="table table-striped table-hover"
+                       style="width: 100% !important">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>الاسم</th>
+                        <th>البداية</th>
+                        <th>النهاية</th>
+                        <th>التوقيت</th>
+                        <th>الحالة</th>
+                        <th>التكرار</th>
+                        <th>الاجراءات</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="setting in calendarSettings">
+                        <td>{{setting.settings.id}}</td>
+                        <td>{{setting.settings.name}}</td>
+                        <td>{{setting.settings.startTime}}</td>
+                        <td>{{setting.settings.endTime}}</td>
+                        <td>-</td>
+                        <td>{{setting.settings.active}}</td>
+                        <td>{{setting.settings.frequency.id}}</td>
+                        <td class="col-lg-1">
+                            <a href ui-sref="app.editCalendarSetting({ id: 2 })">
+                                <i class="fa fa-edit" bs-tooltip data-placement="top" data-title="تعديل"></i>
+                            </a>
+                            <a href ng-click="deleteObj(setting.settings.id , $index)">
+                                <i class="fa fa-trash" bs-tooltip data-placement="top" data-title="حذف"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

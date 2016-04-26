@@ -1,0 +1,382 @@
+@media only screen and (max-width: 767px) {
+    .logo > a, .top_panel ul > li {
+        display: inline-block
+    }
+
+    .header, ul.social {
+        text-align: center
+    }
+
+    .mid_container {
+        width: 95%
+    }
+
+    .login_box, .top_panel, h1.logo {
+        width: 100%
+    }
+
+    .header {
+        background: #fff;
+        height: auto
+    }
+
+    .blue_part ul li::after, .time_oranizer .right_col::before, .top_panel > ul > li::before, footer::before, ul.steps::after {
+        background: 0 0
+    }
+
+    header.header.inner {
+        height: auto;
+        position: relative
+    }
+
+    .breadcrumb {
+        margin-top: 10px
+    }
+
+    .login_box form .action_button input.comman_bttn.blue[type=submit], .login_box form .action_button input.comman_bttn.purple[type=submit] {
+        margin-bottom: 10px
+    }
+
+    h1.logo {
+        margin: 10px 0
+    }
+
+    .top_panel {
+        margin-bottom: 0;
+        border-radius: 0
+    }
+
+    .banner_sec .lft_part, .banner_sec .rht_part {
+        width: 100%;
+        margin-bottom: 20px
+    }
+
+    .top_panel ul > li {
+        float: none;
+        padding: 0 2px
+    }
+
+    .top_menu {
+        display: none
+    }
+
+    .banner_sec .lft_part {
+        margin-top: 20px
+    }
+
+    .banner_sec .lft_part h2 {
+        font-size: 2.8rem
+    }
+
+    .banner_sec .lft_part h3 {
+        font-size: 2rem
+    }
+
+    .banner_sec .rht_part h2 {
+        font-size: 1.8rem
+    }
+
+    .blue_part ul li a, .tip_sec .top h3 {
+        font-size: 1.1rem
+    }
+
+    .link_sec a + input {
+        margin: 0
+    }
+
+    .blue_part ul li {
+        padding: 0 2%;
+        width: 45%
+    }
+
+    .blue_part ul li:first-child {
+        padding-left: 2%
+    }
+
+    .blue_part ul li::before {
+        margin-right: 10px
+    }
+
+    .service_block {
+        padding: 20px 0 0
+    }
+
+    .service_block .lft_panel {
+        padding: 0;
+        width: 100%
+    }
+
+    .body_part {
+        padding: 30px 0 0
+    }
+
+    .service_block .lft_panel .right {
+        width: 66%;
+        padding: 0 0 0 5%
+    }
+
+    .service_block .rht_panel, .tip_sec {
+        width: 100%
+    }
+
+    .tip_sec .top h3 {
+        width: 231px;
+        height: 43px;
+        overflow: hidden
+    }
+
+    .news ul li .rht h3, .testi_area .testi div span {
+        font-size: 1.2rem
+    }
+
+    .feedback ul li {
+        margin-left: 0;
+        width: 96%;
+        margin-bottom: 20px
+    }
+
+    .comman_padding {
+        padding: 20px 0
+    }
+
+    .news ul li {
+        width: 97%;
+        margin-right: 0;
+        margin-bottom: 10px
+    }
+
+    .contact_sec ul.contact_form, .testi_area {
+        width: 100%
+    }
+
+    .contact_sec ul.contact_form li {
+        margin-left: 0;
+        width: 100%
+    }
+
+    .contact_sec ul.contact_form li textarea {
+        width: 90%
+    }
+
+    .testi_area .testi div p {
+        width: 300px
+    }
+
+    .contact_sec ul.contact_form li:nth-child(4), div#string_holder, ul.social {
+        width: 100%
+    }
+
+    #winner_top .owl-buttons .owl-prev {
+        left: 0
+    }
+
+    #winner_top .owl-buttons .owl-next {
+        right: 0
+    }
+
+    footer figure {
+        width: 47.76%
+    }
+
+    footer::after {
+        top: -177px
+    }
+
+    ul.social {
+        margin: 10px 0
+    }
+
+    iframe {
+        height: 100%
+    }
+
+    .slicknav_menu {
+        display: block
+    }
+
+    a.slicknav_btn {
+        top: -32px
+    }
+
+    .banner_sec .rht_part textarea {
+        padding: 10px 2%;
+        width: 96%
+    }
+
+    .login_box.trial form ul li label, .login_box.trial form ul li > span {
+        font-size: 1.2rem;
+        text-align: left
+    }
+
+    h2.comman_title {
+        font-size: 3rem
+    }
+
+    .dash_col1, .dash_col2, .dash_col3 {
+        width: 100%;
+        margin-left: 0
+    }
+
+    .dash_col2 .block {
+        width: 100%;
+        margin-bottom: 10px
+    }
+
+    .dash_col2 .share_sec {
+        margin-top: 0;
+        margin-bottom: 10px;
+        padding: 10px 2%;
+        width: 95.5%
+    }
+
+    .dash_col2 .share_sec span {
+        font-size: 1.1rem
+    }
+
+    .dash_col2 .share_sec a {
+        margin-left: 5px;
+        width: 20px;
+        height: 20px;
+        line-height: 2rem
+    }
+
+    .dash_col2 .share_sec a > span {
+        font-size: 11px;
+        line-height: 11px
+    }
+
+    .user_info {
+        font-size: 1.8rem
+    }
+
+    .goal_sec .goal_lft, .goal_sec .goal_rht {
+        width: 100%
+    }
+
+    ul.steps {
+        text-align: center;
+        height: auto
+    }
+
+    ul.steps li {
+        margin-bottom: 10px
+    }
+
+    .goal_sec .goal_lft .col-left {
+        width: 32%
+    }
+
+    .goal_sec .goal_lft .col-left > ul li input[type=checkbox] {
+        margin-right: 5px
+    }
+
+    .goal_sec .goal_lft .col-right {
+        width: 66%;
+        margin-top: 0
+    }
+
+    .goal_sec .goal_lft .col-right .wid-50 {
+        width: 100%;
+        margin-bottom: 10px
+    }
+
+    .goal_sec .goal_lft .col-right .wid-50 textarea {
+        padding: 10px 2%;
+        width: 96%
+    }
+
+    .goal_sec .goal_lft .button_sec a.comman_bttn {
+        margin-bottom: 10px
+    }
+
+    ul.steps li.active::before {
+        background: 0 0;
+        box-shadow: none
+    }
+
+    .time_oranizer .left_col {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 10px
+    }
+
+    .time_oranizer .right_col {
+        width: 100%;
+        padding: 0
+    }
+
+    .privacy .button_sec a.comman_bttn {
+        padding: 0 20px
+    }
+
+    .privacy .block_bottom a.comman_bttn {
+        margin-top: 0
+    }
+
+    .notification_below {
+        width: 100%
+    }
+
+    .part1, .part2, .part3 {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px
+    }
+
+    div.notification_below .part.part1 {
+        width: 46%
+    }
+
+    div.notification_below .part.part2 {
+        width: 50%;
+        float: right
+    }
+
+    .notification_below .top_part .part.part3 span, .part.part2 > span, .search_panel .search_box, .search_panel select {
+        width: auto
+    }
+
+    .notification_below .top_part .part.part3 span {
+        text-align: left
+    }
+
+    .notification_below .top_part .part input[type=radio] {
+        margin-left: 2%
+    }
+
+    .notification_below .button_sec a.comman_bttn {
+        padding: 0 20px;
+        margin-bottom: 10px
+    }
+
+    .notification_below .top_part .part + .part {
+        margin-left: 0
+    }
+
+    .time_oranizer + .button_sec a.comman_bttn {
+        padding: 0 32px;
+        margin-bottom: 10px
+    }
+
+    .search_panel .selectboxit .selectboxit-option-icon-container {
+        display: none
+    }
+
+    .search_panel .search_box input[type=search], .search_panel .selectboxit-container .selectboxit-options a, .search_panel .selectboxit-container span {
+        float: left
+    }
+
+    .search_panel #select_optionSelectBoxItContainer, .search_panel .search_box {
+        padding: 6px 2%;
+        width: 96%
+    }
+
+    .search_panel .search_box {
+        margin-top: 10px;
+        margin-left: 0
+    }
+
+    .srch_area {
+        width: 96%
+    }
+}

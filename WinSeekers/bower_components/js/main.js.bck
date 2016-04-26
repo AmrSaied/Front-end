@@ -1,0 +1,361 @@
+jQuery(function($) {
+
+   $('.dropdown').hover(function() {
+       var $list   = $(this),
+      $select = $('<select title="select your language" />');
+
+    $list.children('li').each(function(index) {
+      $select.append($('<option />').attr('value', index).html($(this).html()));
+    });
+
+    $list.replaceWith($select);
+     var index   = $('.dropdown, select[id^="converted_dropdown_"]').index( this ),
+    $select = $('<select />').attr('id', 'converted_dropdown_' + (index + 1));
+
+  });
+
+   $('.scroll_top').on("click",function(e){
+    e.preventDefault();
+    var hd_height = $('.header').height();
+    $('body,html').animate({
+      scrollTop: $($(this).attr('href')).offset().top - hd_height
+    },2000);
+  });
+ 
+  $("#winner_top").length > 0 && $("#winner_top").owlCarousel ({
+ 
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      autoPlay : true,
+      navigationText : false,
+      singleItem:true
+
+  });
+
+  $("#goal_slide").length > 0 && $("#goal_slide").owlCarousel({
+ 
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 500,
+      paginationSpeed : 400,
+      autoPlay : true,
+      pagination:false,
+      navigationText : false,
+      singleItem:true
+ 
+  });
+
+var talbe_sort = function(t){
+  $(t).find('.tablesorter').tablesorter({
+    theme: 'jui',
+    showProcessing: true,
+    headerTemplate : '{content} {icon}',
+    widgets: [ 'uitheme', 'zebra','filter', 'scroller', 'reflow', 'columnSelector' ],
+    widgetOptions : {
+      scroller_height : 150,
+      scroller_upAfterSort: true,
+      scroller_jumpToHeader: true,
+      scroller_barWidth : null,
+      filter_external: 'input.search',
+      filter_reset: '.reset',// class name added to make it responsive (class name within media query)
+      reflow2_className    : 'ui-table-reflow',
+      // ignore header cell content with this class name
+      reflow2_classIgnore  : 'ui-table-reflow-ignore',
+      // header attribute containing modified header name
+      reflow2_headerAttrib : 'data-name',
+      // class name applied to thead labels
+      reflow2_labelClass   : 'ui-table-cell-label',
+      // class name applied to first row thead label
+      reflow2_labelTop     : 'ui-table-cell-label-top'
+    }
+  });
+};
+
+ //Vertical Tab
+        $('#parentVerticalTab').length > 0 && $('#parentVerticalTab').easyResponsiveTabs({
+            type: 'vertical', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+               talbe_sort(".resp-tab-content-active");
+            }
+            
+        })
+
+if($(".resp-tab-content-active").length){
+  talbe_sort('.resp-tab-content-active');
+}else{
+  $('.resp-tabs-container hor_1').length ? talbe_sort($('.resp-tabs-container hor_1 > div').eq(0)):null;
+}
+
+if($('.testi').length > 0){
+        var $testi =  $('.testi').slick({
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          autoplay: true,
+          arrows: false,
+           autoplaySpeed: 6000
+          
+        });
+      var $ft = "<p>"+$testi.find(".slick-slide").eq(0).children("p").html()+"</p>";
+                $("#string_holder").html($ft);
+
+
+      $testi.on('afterChange', function(event, slick, currentSlide, nextSlide){
+        var $string = "<p>"+$testi.find(".slick-slide").eq(currentSlide).children('p').html()+"</p>";
+          $("#string_holder").stop(true, true).fadeOut(function(){
+            $(this).html($string).stop(true, true).fadeIn();
+          })
+      });
+}
+
+  $('.date_calendar').length > 0 && $('.date_calendar').datepicker();
+
+  $('.time_zone').length > 0 && $('.time_zone').timepicker();
+
+  $("select.defaults-select-action").length > 0 && $("select.defaults-select-action").selectBoxIt({
+    downArrowIcon: "fa fa-angle-down",
+    autoWidth: false,
+    maxWidth: false
+
+  });
+
+  /* $("select.defaults-select-action-top").length > 0 && $("select.defaults-select-action-top").selectBoxIt({
+    downArrowIcon: "fa fa-angle-down",
+    autoWidth: false,
+    maxWidth: false
+
+  });*/
+
+   $('ul.menu_top').length > 0 && $('ul.menu_top').slicknav({
+
+          label: '',
+          'closeOnClick': true
+
+  });
+
+var steps = 5, sl_width = $( "#slider-range-min" ).width(), grades=['Very Poor', 'Poor', 'Good', 'Better', 'Excellent'];
+
+  $( "#slider-range-min" ).length > 0 && $( "#slider-range-min" ).slider({
+      range: "min",
+      value: 1,
+      min: 1,
+      max: steps,
+      slide: function( event, ui ) {
+        $( ui.handle ).html("<i>"+ui.value+" "+grades[ui.value-1]+"</i>" );
+         $("#amount").val(ui.value+" "+grades[ui.value-1]);
+      },
+      create:function(ev, ui){
+        setTimeout(function(){
+          var $val = $( "#slider-range-min" ).slider( "value" );
+          $( ".ui-slider-handle" ).html("<i>"+ $val+" "+grades[$val-1]+"</i>");
+          var num=1;
+          for(i=0; i<=100; i+=(100/(steps-1))){
+            $(ev.target).append("<i class='top_num' style='left:"+parseInt(i)+"%'>"+num+"</i>")
+            num++;  
+          }
+          $("#amount").val($val+" "+grades[$val-1]);
+        },10)
+      }
+    });
+
+    $('span.fa.fa-bars').on("click",function(){
+      $(this).parent().next().slideToggle();
+
+    });
+
+    $('.toggle').length > 0 && $('.toggle').toggles({on:true});
+
+    $('#jstree1').length > 0 && $('#jstree1').jstree();
+
+    $(window).load(function(){
+
+      $(".scroll_sec").length > 0 && $(".scroll_sec").mCustomScrollbar({
+          snapAmount:40,
+          scrollButtons:{enable:true},
+          keyboard:{scrollAmount:40},
+          mouseWheel:{deltaFactor:40},
+          scrollInertia:40
+        });
+
+      $(".goal_list").length > 0 &&  $(".goal_list").mCustomScrollbar({
+          snapAmount:40,
+          scrollButtons:{enable:true},
+          keyboard:{scrollAmount:40},
+          mouseWheel:{deltaFactor:40},
+          scrollInertia:40
+        });
+
+      $(".privacy_scroll").length > 0 &&  $(".privacy_scroll").mCustomScrollbar({
+
+           snapAmount:40,
+          scrollButtons:{enable:true},
+          keyboard:{scrollAmount:40},
+          mouseWheel:{deltaFactor:40},
+          scrollInertia:40,
+
+          callbacks:{
+            onTotalScroll :function(){
+              $('.acck').removeAttr("disabled");
+          }
+        }
+
+      });
+
+      $(".scrollTo a").click(function(e){
+          e.preventDefault();
+          var $this=$(this),
+            rel=$this.attr("rel"),
+            el=rel==="content-y" ? ".demo-y" : rel==="content-x" ? ".demo-x" : ".demo-yx",
+            data=$this.data("scroll-to"),
+            href=$this.attr("href").split(/#(.+)/)[1],
+            to=data ? $(el).find(".mCSB_container").find(data) : el===".demo-yx" ? eval("("+href+")") : href,
+            output=$("#info > p code"),
+            outputTXTdata=el===".demo-yx" ? data : "'"+data+"'",
+            outputTXThref=el===".demo-yx" ? href : "'"+href+"'",
+            outputTXT=data ? "$('"+el+"').find('.mCSB_container').find("+outputTXTdata+")" : outputTXThref;
+          $(el).mCustomScrollbar("scrollTo",to);
+          output.text("$('"+el+"').mCustomScrollbar('scrollTo',"+outputTXT+");");
+          $('.acck').removeAttr("disabled");
+        });
+    });
+
+  $('#calendar_month').length > 0 && $('#calendar_month').fullCalendar({
+
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,basicWeek,basicDay'
+      },
+      defaultDate: '2015-12-12',
+     editable: true,
+    eventLimit: true, // allow "more" link when too many events
+    events: [
+      {
+        title: 'All Day Event',
+        start: '2015-12-01'
+      },
+      {
+        title: 'Long Event',
+        start: '2015-12-07',
+        end: '2015-12-10'
+      },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2015-12-09T16:00:00'
+      },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2015-12-16T16:00:00'
+      },
+      {
+        title: 'Conference',
+        start: '2015-12-11',
+        end: '2015-12-13'
+      },
+      {
+        title: 'Meeting',
+        start: '2015-12-12T10:30:00',
+        end: '2015-12-12T12:30:00'
+      },
+      {
+        title: 'Lunch',
+        start: '2015-12-12T12:00:00'
+      },
+      {
+        title: 'Meeting',
+        start: '2015-12-12T14:30:00'
+      },
+      {
+        title: 'Happy Hour',
+        start: '2015-12-12T17:30:00'
+      },
+      {
+        title: 'Dinner',
+        start: '2015-12-12T20:00:00'
+      },
+      {
+        title: 'Birthday Party',
+        start: '2015-12-13T07:00:00'
+      },
+      {
+        title: 'Click for Google',
+        url: 'http://google.com/',
+        start: '2015-12-28'
+      }
+    ]
+  });
+
+$('#calendar_list').length > 0 && $('#calendar_list').fullCalendar({
+
+      header: {
+        left: 'title',
+        center: '',
+        right: 'today'
+      },
+     defaultDate: '2015-12-12',
+     defaultView: 'agendaDay',
+    editable: true,
+    eventLimit: true, // allow "more" link when too many events
+    events: [
+      {
+        title: 'All Day Event',
+        start: '2015-12-01'
+      },
+      {
+        title: 'Long Event',
+        start: '2015-12-07',
+        end: '2015-12-10'
+      },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2015-12-09T16:00:00'
+      },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2015-12-16T16:00:00'
+      },
+      {
+        title: 'Conference',
+        start: '2015-12-11',
+        end: '2015-12-13'
+      },
+      {
+        title: 'Meeting',
+        start: '2015-12-12T10:30:00',
+        end: '2015-12-12T12:30:00'
+      },
+      {
+        title: 'Lunch',
+        start: '2015-12-12T12:00:00'
+      },
+      {
+        title: 'Meeting',
+        start: '2015-12-12T14:30:00'
+      },
+      {
+        title: 'Happy Hour',
+        start: '2015-12-12T17:30:00'
+      },
+      {
+        title: 'Dinner',
+        start: '2015-12-12T20:00:00'
+      },
+      {
+        title: 'Birthday Party',
+        start: '2015-12-13T07:00:00'
+      },
+      {
+        title: 'Click for Google',
+        url: 'http://google.com/',
+        start: '2015-12-28'
+      }
+    ]
+  });
+});

@@ -1,0 +1,34 @@
+<ul class="nav">
+
+    <li ui-sref-active="active"><a ui-sref="app.dashboard">
+        <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+        <span class="font-bold">الرئيسية</span>
+    </a></li>
+
+    <li>
+        <a href class="auto">
+            <span class="pull-right text-muted">
+				<i class="fa fa-fw fa-angle-left text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+		    </span>
+            <i class="glyphicon glyphicon-calendar icon text-info-dker"></i>
+            <span class="font-bold">الجدول الزمني</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li ui-sref-active="active">
+                <a href ui-sref="app.calendarSettings"> الاعدادات </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.addCalendarSetting"> اضافة </a>
+            </li>
+        </ul>
+    </li>
+
+    <li ui-sref-active="active">
+        <a ui-sref="app.goals">
+            <i class="glyphicon glyphicon-calendar icon text-info-dker"></i>
+            <span class="font-bold">الاهداف</span>
+        </a>
+    </li>
+
+</ul>

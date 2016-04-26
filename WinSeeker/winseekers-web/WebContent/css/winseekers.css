@@ -1,0 +1,36 @@
+/* validation */
+.error-message {
+	color: maroon
+}
+
+.error-message-bg {
+	color: #ffffff;
+	background-color: maroon;
+}
+
+/* noty */
+#noty_topRight_layout_container .noty_message {
+	text-align: right !important;
+}
+
+/* preloader */
+.loader {
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
+.loader .inner {
+	width: 100%;
+	height: 100%;
+	background: url(../img/loader.gif) center center no-repeat;
+}
+
+/* datatble */
+.dataTables_paginate, .dataTables_filter {
+	float: left !important;
+}

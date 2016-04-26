@@ -1,0 +1,59 @@
+<div ng-controller="manageGoalsCtrl">
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">الاهداف</h1>
+    </div>
+
+    <div class="wrapper-md">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <!-- 				<h3 class="panel-title"> -->
+                <!-- 					<a href data-toggle="modal" data-target="#add-goal-modal"><i -->
+                <!-- 						class="pull-right fa fa-plus-circle"></i></a>هدف -->
+                <!-- 				</h3> -->
+            </div>
+            <div class="table-responsive">
+
+                <!-- 				<table datatable="" dt-options="dtOptions" dt-instance="dtInstance" -->
+                <!-- 					dt-columns="dtColumns" style="width: 100% !important" -->
+                <!-- 					class="table table-bordered table-hover table-condensed bg-white-only"></table> -->
+
+                <table datatable="ng" dt-options="dtOptions"
+                       dt-instance="dtInstance" class="table table-striped table-hover"
+                       style="width: 100% !important">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>العنوان</th>
+                        <th>الوصف</th>
+                        <th>الموعد المستهدف</th>
+                        <th>القيمة المستهدفة</th>
+                        <th>القيمة الاساسية</th>
+                        <th>الاجراءات</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="goal in goals">
+                        <td>{{ goal.id}}</td>
+                        <td>{{ goal.title}}</td>
+                        <td>{{ goal.description}}</td>
+                        <td>{{ goal.targetDate}}</td>
+                        <td>{{ goal.targetValue}}</td>
+                        <td>{{ goal.baseValue}}</td>
+                        <td class="col-lg-1">
+                            <a href ng-click="editGoal(goal)">
+                                <i class="fa fa-edit" bs-tooltip data-placement="top" title="تعديل"></i>
+                            </a>
+                            <a href ng-click="delete(goal , $index)">
+                                <i class="fa fa-trash" bs-tooltip data-placement="top" title="حذف"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

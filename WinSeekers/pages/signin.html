@@ -1,0 +1,50 @@
+<head>
+    <title>$root.title</title>
+</head>
+
+<main id="main_block" tabindex="-1" ng-controller="SignInControllers">
+    <div class="breadcrumb">
+        <div class="mid_container clearfix">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><span> Sign in</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="body_part">
+        <div class="mid_container clearfix">
+            <h2 class="comman_title">Member Sign In</h2>
+
+            <li class="login_box">
+                <form action="#" class="clearfix" name="SignInForm"  data-ng-submit="SignIn() " novalidate >
+                    <ul>
+                        <li>
+                            <label for="email">Email </label>
+                            <input type="email" id="email" name="email"  ng-model="login.mail" class="form_elements" maxlength="100" value=""
+                                   title="Enter your email" required   ng-minlength="5"
+                                   ng-maxlength="30">
+                        </li>
+
+                        <li ng-show="SignInForm.$dirty || SignInForm.$s" ng-messages="SignInForm.email.$error ">
+                            <div ng-include="'pages/common/error-messages.html'"></div>
+                        </li>
+
+                        <li>
+                            <label for="password">Password </label>
+                            <input type="password" id="password" class="form_elements" ng-model="login.password"  value="" name="password"
+                                   maxlength="100" title="Enter your password">
+                        </li>
+                    </ul>
+                    <div class="action_button">
+                        <input type="button" value="Sign In"  ng-click="SignIn()" class="comman_bttn purple">
+                        <input type="submit" value="Reset Password" name="reset-password" class="comman_bttn blue">
+                        <button name="reset" class="comman_bttn blue">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</main>

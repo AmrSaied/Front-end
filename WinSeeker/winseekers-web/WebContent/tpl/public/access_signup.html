@@ -1,0 +1,111 @@
+<div class="container w-xxl w-auto-xs" ng-controller="signupController"
+	ng-init="app.settings.container = false;">
+	<a href class="navbar-brand block m-t">{{app.name}}</a>
+	<div class="m-b-lg">
+		<div class="wrapper text-center">
+			<strong>صفحة التسجيل</strong>
+		</div>
+		<form novalidate name="signupForm" class="form-validation"
+			ng-submit="signupForm.$valid && signup()">
+			<div class="list-group list-group-sm">
+				<div class="list-group-item">
+					<input type="text" name="fname" placeholder="الاسم الاول"
+						class="form-control" ng-model="user.fname" ng-trim="true" required>
+					<div ng-if="signupForm.fname.$invalid"
+						ng-show="signupForm.fname.$touched || signupForm.$submitted"
+						ng-messages="signupForm.fname.$error" class="error-message-bg">
+						<div ng-messages-include="tpl/error-messages.html"></div>
+					</div>
+				</div>
+
+				<div class="list-group-item">
+					<input type="text" name="lname" placeholder="اسم العائلة"
+						class="form-control" ng-model="user.lname" ng-trim="true" required>
+					<div ng-if="signupForm.lname.$invalid"
+						ng-show="signupForm.lname.$touched || signupForm.$submitted"
+						ng-messages="signupForm.lname.$error" class="error-message-bg">
+						<div ng-messages-include="tpl/error-messages.html"></div>
+					</div>
+				</div>
+
+				<div class="list-group-item">
+					<input type="email" class="form-control"
+						placeholder="البريد الاليكتروني" name="email"
+						ng-model="user.email" ng-trim="true" required>
+					<div ng-if="signupForm.email.$invalid"
+						ng-show="signupForm.email.$touched || signupForm.$submitted"
+						ng-messages="signupForm.email.$error" class="error-message-bg">
+						<div ng-messages-include="tpl/error-messages.html"></div>
+					</div>
+				</div>
+
+				<div class="list-group-item">
+					<input type="text" placeholder="رقم الجوال" class="form-control"
+						name="mobile" ng-model="user.mobile" ng-pattern="/^\d*$/"
+						maxlength="20" required>
+					<div ng-if="signupForm.mobile.$invalid"
+						ng-show="signupForm.mobile.$touched || signupForm.$submitted"
+						ng-messages="signupForm.mobile.$error" class="error-message-bg">
+						<div ng-message="pattern">رقم الجوال غير صحيح</div>
+						<div ng-messages-include="tpl/error-messages.html"></div>
+					</div>
+				</div>
+
+				<div class="list-group-item">
+					<input type="text" class="form-control" placeholder="إسم المستخدم"
+						name="username"
+						ng-pattern="/^([a-zA-Z])[a-zA-Z_-]*[\w_-]*[\S]$|^([a-zA-Z])[0-9_-]*[\S]$|^[a-zA-Z]*[\S]$/"
+						ng-model="user.username" minlength="3" required>
+					<div ng-if="signupForm.username.$invalid"
+						ng-show="signupForm.username.$touched || signupForm.$submitted"
+						ng-messages="signupForm.username.$error" class="error-message-bg">
+						<div ng-message="pattern">اسم مستخدم غير صحيح</div>
+						<div ng-messages-include="tpl/error-messages.html"></div>
+					</div>
+					<p class="help-block">user | user123 |user_123 | user-123</p>
+				</div>
+
+				<div class="list-group-item">
+					<input type="password" class="form-control"
+						placeholder="كلمة المرور" name="password" ng-model="user.password"
+						minlength="3" required>
+					<div ng-if="signupForm.password.$invalid"
+						ng-show="signupForm.password.$touched || signupForm.$submitted"
+						ng-messages="signupForm.password.$error" class="error-message-bg">
+						<div ng-messages-include="tpl/error-messages.html"></div>
+					</div>
+				</div>
+
+				<div class="list-group-item">
+					<input type="password" class="form-control"
+						placeholder="تأكيد كلمة المرور" name="repassword"
+						match-password="password" ng-model="user.repassword">
+					<div ng-if="signupForm.repassword.$invalid"
+						ng-show="signupForm.repassword.$touched || signupForm.$submitted"
+						ng-messages="signupForm.repassword.$error"
+						class="error-message-bg">
+						<div ng-messages-include="tpl/error-messages.html"></div>
+					</div>
+				</div>
+
+				<div class="list-group-item">
+					<div class="form-group">
+						<div vc-recaptcha key="'6LdPAA4TAAAAABepOc75QPkASSbqtMXmaRrKf869'"
+							on-success="setResponse(response)" on-expire="cbExpiration()"></div>
+						<div style="color: red" id="captcha-reset"></div>
+					</div>
+				</div>
+
+			</div>
+			<button type="submit" class="btn btn-lg btn-primary btn-block"
+				ng-disabled='signupForm.$invalid'>تسجيل</button>
+		</form>
+	</div>
+
+	<div class="text-center">
+		<a href="" ui-sref="access.signin">تسجيل الدخول</a>
+	</div>
+
+	<div class="text-center" ng-include="'tpl/blocks/page_footer.html'">
+		{% include 'blocks/page_footer.html' %}</div>
+</div>

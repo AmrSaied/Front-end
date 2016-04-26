@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr" data-ng-app="WinSeekers">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title ng-bind="$root.title" ng-model="$root.title"></title>
+
+
+
+    <meta name="description"
+          content=" If you need to change your life routine, break the circle of habits you are locked-into, tired of repeated failures, wish your luck switches, need to achieve life-time goals and transform your future, then you are a WinSeeker! this is our business and that’s what we do, helping you to win your life.">
+
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+
+
+
+    <!-- ********* Angular ********* -->
+    <script src="bower_components/angular/angular.js"></script>
+
+    <!-- ********* Ui route Angular ********* -->
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!-- ********* Massage Angular ********* -->
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+
+
+
+
+    <!-- ********* Coocies Angular ********* -->
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+
+    <script src="js/app/app.js"></script>
+    <script src="js/app/app.config.js"></script>
+    <script src="js/app/app.router.js"></script>
+    <script src="js/controllers/SignInControllers.js"></script>
+    <script src="js/services/SignInServices.js"></script>
+
+
+    <!-- ********* Jquery ********* -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="bower_components/js/vendor/jquery-1.11.2.min.js"></script>
+
+
+
+</head>
+<body dir="ltr" >
+<div ng-include="'pages/common/header.html'"></div>
+<div ui-view></div>
+<div ng-include="'pages/common/footer.html'"></div>
+</body>
+</html>
